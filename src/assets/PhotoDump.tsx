@@ -7,13 +7,13 @@ import photo6 from "../assets/photos/stock-photos/photo6.jpg"
 import photo7 from "../assets/photos/stock-photos/photo7.jpg"
 
 const photoArray = [
-    photo1, 
-    photo2, 
-    photo3, 
-    photo4, 
-    photo5,
-    photo6,
-    photo7
+    { src: photo1, width: 100, height: 100  }, 
+    { src: photo2, width: 100, height: 100  }, 
+    { src: photo3, width: 100, height: 100  }, 
+    { src: photo4, width: 100, height: 100  }, 
+    { src: photo5, width: 100, height: 100  },
+    { src: photo6, width: 100, height: 100  },
+    { src: photo7, width: 100, height: 100  }
 ]
 
 export { photoArray }
