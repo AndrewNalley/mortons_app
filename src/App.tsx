@@ -18,8 +18,8 @@ import Gallery from './pages/Gallery';
 import Contact from './pages/Contact';
 
 // styles
-import '@picocss/pico'
 import './App.css';
+import '@picocss/pico'
 
 // instantiate router 
 const router = createBrowserRouter(

@@ -1,19 +1,19 @@
-import photo1 from "../assets/photos/stock-photos/photo1.jpg"
-import photo2 from "../assets/photos/stock-photos/photo2.jpg"
-import photo3 from "../assets/photos/stock-photos/photo3.jpg"
-import photo4 from "../assets/photos/stock-photos/photo4.jpg"
-import photo5 from "../assets/photos/stock-photos/photo5.jpg"
-import photo6 from "../assets/photos/stock-photos/photo6.jpg"
-import photo7 from "../assets/photos/stock-photos/photo7.jpg"
+interface Photo {
+    src: string;
+    width: number;
+    height: number;
+}
 
-const photoArray = [
-    { src: photo1, width: 100, height: 100  }, 
-    { src: photo2, width: 100, height: 100  }, 
-    { src: photo3, width: 100, height: 100  }, 
-    { src: photo4, width: 100, height: 100  }, 
-    { src: photo5, width: 100, height: 100  },
-    { src: photo6, width: 100, height: 100  },
-    { src: photo7, width: 100, height: 100  }
-]
+const photoArray: Photo[] = [];
 
-export { photoArray }
+
+const upperLimit = 37;
+
+// Use forEach to loop through the range of images
+Array.from({ length: upperLimit }, (_, index) => {
+    const photo = require(`../assets/photos/proj-photos/Craft_Lindsey-${String(index + 1).padStart(2, '0')}.jpg`);
+    photoArray.push({ src: photo, width: 192, height: 108 });
+    return null;
+  });
+
+export { photoArray };
