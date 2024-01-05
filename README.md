@@ -1,8 +1,8 @@
-# Clarion Studios App
+# Morton's Mementos App
 
 ## Description
 
-- One stop shop for all things Clarion Studios.
+- One stop shop for all things Morton's Mementos.
 
 
 ## Table of Contents
