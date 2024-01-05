@@ -2,7 +2,7 @@
 
 ## Description
 
-- One stop shop for all things Morton's Mementos.
+- One stop shop for all things Morton's Mementos. Simple eCommerce site with homepage, about section, photos of past products, and a contact form for customers to describe the type of service or product in which they are interested. 
 
 
 ## Table of Contents
@@ -20,6 +20,8 @@ Check it out.
 
 
 ## Credits
+
+Photo Gallery Library: https://benhowell.github.io/react-grid-gallery
 
 TypeScript error handling: https://engineering.udacity.com/handling-errors-like-a-pro-in-typescript-d7a314ad4991
 
