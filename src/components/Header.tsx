@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom"
-import dog from "../photos/dog-stock.jpg"
+import dog from "../assets/photos/stock-photos/dog-stock.jpg"
 // import logo from './../images/clarion-horn.png'
 
 export default function Header() {
@@ -11,7 +11,6 @@ export default function Header() {
                     <NavLink to='/'>Home</NavLink>
                     <NavLink to='about'>About</NavLink>
                     <NavLink to='gallery'>Gallery</NavLink>
-                    <NavLink to='profile'>Profile</NavLink>
                     <NavLink to='contact'>Contact</NavLink>
                 </nav>
                 <img className="main-photo" src={dog} alt="dog" />
