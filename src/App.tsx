@@ -1,4 +1,3 @@
-import React from 'react';
 import {
   createBrowserRouter,
   Route,
@@ -8,18 +7,15 @@ import {
 
 // layout
 import RootLayout from './layouts/RootLayout';
-import ProfileLayout from './layouts/ProfileLayout';
 
 // components
-import Header from './components/Header';
-import Footer from './components/Footer';
 
 // pages
 import Home from './pages/Home';
 import About from './pages/About';
-import MyProfile from './pages/profile/MyProfile';
-import ProfileError from './pages/profile/ProfileError';
 import NotFound from './pages/NotFound';
+import Gallery from './pages/Gallery';
+import Contact from './pages/Contact';
 
 // styles
 import '@picocss/pico'
@@ -31,12 +27,8 @@ const router = createBrowserRouter(
     <Route path='/' element={<RootLayout />}>
       <Route index element={<Home />} />
       <Route path='about' element={<About />} />
-      <Route path="profile" element={<ProfileLayout />} errorElement={<ProfileError />}>
-        <Route
-          index
-          element={<MyProfile />}
-        />
-      </Route>
+      <Route path='gallery' element={<Gallery />} />
+      <Route path='contact' element={<Contact />} />
       <Route path='*' element={<NotFound />} />
     </Route>
 
