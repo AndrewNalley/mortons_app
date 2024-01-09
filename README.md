@@ -16,10 +16,14 @@
 
 ## Usage
 
-Check it out. 
+If you like the crafts you see, reach out to the creator using the form on the contact page!
 
 
 ## Credits
+
+Implementation of contact form without backend using emailJS: https://medium.com/weekly-webtips/simple-react-contact-form-without-back-end-9fa06eff52d9
+
+Library to read EXIF data: https://github.com/MikeKovarik/exifr
 
 Photo Gallery Library: https://benhowell.github.io/react-grid-gallery
 
@@ -57,12 +61,11 @@ SOFTWARE.
 ## Features
 
 SPA 
-
-
+Front-end only contact form
+React BrowserRouter
 
 
 ## Tests
-
 
 Use Google Dev Tools to see the responsiveness of the page.
 

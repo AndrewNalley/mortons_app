@@ -3,7 +3,7 @@ export default function Footer() {
     const currentYear = new Date().getFullYear();
     return (
         <>
-            <h2>FOOTER</h2>
+            <h6>FOOTER</h6>
             <p>Copyright ©️ {currentYear} Andrew Nalley </p>
         </>
     );

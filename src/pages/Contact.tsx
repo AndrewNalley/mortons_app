@@ -45,14 +45,13 @@ const Contact = () => {
             );
             reset();
             toastifySuccess();
-            console.log(templateParams);
         } catch (e) {
-            console.log(e);
+            console.error(e);
         }
     };
 
     return (
-        <div className='container'>
+        <section className='page container'>
             <p className='heading-center'>Looking for something special? Let us know!</p>
             <form id='contact-form' onSubmit={handleSubmit(onSubmit)} noValidate>
                 <div className='row formRow'>
@@ -127,7 +126,7 @@ const Contact = () => {
                 </button>
             </form>
             <ToastContainer />
-        </div>
+        </section>
     );
 };
 
