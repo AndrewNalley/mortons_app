@@ -17,7 +17,7 @@ export default function Header() {
                 <div className="center-section">
                     <img className="main-photo" src={logo} alt="dog" height={100} width={100} />
                     <h1 className="shop-name">Morton's Mementos</h1>
-                    <p className="shop-description">and Eclectic gifts</p>
+                    <p className="shop-description">and Eclectic Gifts</p>
                 </div>
                 <nav className="right-section">
                     <NavLink className={section} to='gallery'>Gallery</NavLink>
