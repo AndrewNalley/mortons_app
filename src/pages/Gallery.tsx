@@ -15,7 +15,7 @@ export default function PhotoGallery() {
     }, []); // Empty dependency array to run the effect only once
 
     return (
-        <>
+        <section className='page'>
             <h1>Gallery of past projects </h1>
 
             {loading ? (
@@ -24,6 +24,6 @@ export default function PhotoGallery() {
                 <Gallery images={photos} />
             )}
             <FillerText />
-        </>
+        </section>
     );
 }
