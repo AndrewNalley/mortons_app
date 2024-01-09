@@ -5,6 +5,10 @@ import {
   RouterProvider
 } from 'react-router-dom';
 
+//polyfills
+// import 'core-js/stable';
+// import 'regenerator-runtime/runtime';
+
 // layout
 import RootLayout from './layouts/RootLayout';
 
