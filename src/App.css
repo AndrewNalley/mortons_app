@@ -1,17 +1,64 @@
-.app-main {
-  padding: 1px;
+/* Global Variables */
+:root {
+  --teal: teal;
+  --pink: rgb(255, 255, 255);
+  --ivory: rgb(255, 255, 240);
+  --oldWhite: antiquewhite;
+  --black: rgb(1, 1, 7);
 }
 
+.app-main {
+  padding: 1px;
+  background-color: var(--ivory);
+}
 
+.page {
+  padding: 5%;
+}
+
+.page-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: cursive;
+}
+
+/* Fonts */
+.main-logo-text {
+  font-family: cursive;
+  font-size: 24px;
+  margin-bottom: 5px;
+
+}
+
+.sub-logo-text {
+  font-family: Snell Roundhand, cursive;
+  font-size: 20px;
+}
+
+.nav-text {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color: var(--black);
+}
+
+.footer-text {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: small;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.link-text {
+  color: var(--teal);
+}
 
 /* Container for the header component */
 .header-container {
   display: flex;
-  justify-content:center;
+  justify-content: center;
   align-items: center;
   padding-top: 35px;
-
-
 }
 
 /* Center section with shop name and description */
@@ -22,24 +69,15 @@
   padding: 2%;
 }
 
-.shop-name {
-  font-family: cursive;
-  font-size: 24px; /* Adjust font size as needed */
-  margin-bottom: 5px;
-}
-
-.shop-description {
-  font-family: Snell Roundhand, cursive;
-  font-size: 20px; /* Adjust font size as needed */
-}
-
 .section {
   border-bottom: 1px solid #000;
-  padding: 20px; /* Adjust padding as needed */
-  box-sizing: border-box; /* Include padding and border in the width calculation */
+  padding: 20px;
+  /* Adjust padding as needed */
+  box-sizing: border-box;
+  /* Include padding and border in the width calculation */
   margin: -1px;
   border-radius: 0;
-  
+
 }
 
 /* Left section styles */
@@ -71,7 +109,7 @@
 
 
 .main-photo {
-  border: solid ;
+  border: solid;
   border-radius: 50%;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;

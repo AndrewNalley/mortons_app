@@ -7,7 +7,7 @@ export default function RootLayout() {
 
 
     return (
-            <main className='app-main'>
+            <main data-theme="light" className='app-main'>
                 <Header />
                 <Outlet />
                 <Footer />

@@ -51,7 +51,8 @@ const Contact = () => {
     };
 
     return (
-        <section className='page container'>
+        <section className='page container nav-font'>
+            <h2 className='page-header'>Contact Us</h2>
             <p className='heading-center'>Looking for something special? Let us know!</p>
             <form id='contact-form' onSubmit={handleSubmit(onSubmit)} noValidate>
                 <div className='row formRow'>

@@ -4,7 +4,7 @@ export default function Footer() {
     return (
         <>
             <h6>FOOTER</h6>
-            <p>Copyright ©️ {currentYear} Andrew Nalley </p>
+            <p className="footer-text">©️ COPYRIGHT {currentYear} | SITE DESIGN BY ANDREW NALLEY </p>
         </>
     );
 }
