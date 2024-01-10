@@ -2,6 +2,7 @@
 export default function About() {
     return (
       <section className="page">
+        <h2 className="page-header">About Us</h2>
         <h4>Wedding Flower Preservation, Resin Coasters and Decorative Serving Trays, Candles, Extracts, and more!</h4>
         <p>Anyone who knows me could tell you the most important thing to me is my baby boy Morton. 🐶🩵 </p>
           

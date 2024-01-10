@@ -5,7 +5,7 @@ import logo from "../assets/photos/stock-photos/dog-stock.jpg"
 
 export default function Header() {
 
-    const section = "section"
+    const section = "section nav-text link-text"
 
     return (
         <>
@@ -16,8 +16,8 @@ export default function Header() {
                 </nav>
                 <div className="center-section">
                     <img className="main-photo" src={logo} alt="dog" height={100} width={100} />
-                    <h1 className="shop-name">Morton's Mementos</h1>
-                    <p className="shop-description">and Eclectic Gifts</p>
+                    <h1 className="main-logo-text">Morton's Mementos</h1>
+                    <p className="sub-logo-text">and Eclectic Gifts</p>
                 </div>
                 <nav className="right-section">
                     <NavLink className={section} to='gallery'>Gallery</NavLink>
