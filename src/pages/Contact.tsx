@@ -1,8 +1,7 @@
-import React from 'react';
-import { useForm } from 'react-hook-form';
-import emailjs from 'emailjs-com';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.min.css';
+import { useForm } from 'react-hook-form'
+import emailjs from 'emailjs-com'
+import { ToastContainer, toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.min.css'
 
 const Contact = () => {
 
@@ -11,7 +10,7 @@ const Contact = () => {
         handleSubmit,
         reset,
         formState: { errors }
-    } = useForm();
+    } = useForm()
 
     // displays success message when submission is successful
     const toastifySuccess = () => {
@@ -43,12 +42,12 @@ const Contact = () => {
                 templateParams,
                 process.env.REACT_APP_PUBLIC_KEY ?? 'default_public_key'
             );
-            reset();
-            toastifySuccess();
+            reset()
+            toastifySuccess()
         } catch (e) {
-            console.error(e);
+            console.error(e)
         }
-    };
+    }
 
     return (
         <section className='page container nav-font'>
@@ -132,7 +131,7 @@ const Contact = () => {
             </form>
             <ToastContainer />
         </section>
-    );
-};
+    )
+}
 
-export default Contact;
+export default Contact

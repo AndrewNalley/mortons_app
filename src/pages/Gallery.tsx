@@ -5,6 +5,7 @@ import { getPhotos } from "../assets/PhotoDump"
 import { CustomPhoto } from '../assets/PhotoDump'
 import Lightbox from 'react-image-lightbox'
 import 'react-image-lightbox/style.css'
+import { Container } from 'semantic-ui-react'
 
 export default function PhotoGallery() {
   const [index, setIndex] = useState(-1)
@@ -41,11 +42,12 @@ export default function PhotoGallery() {
       {loading ? (
         <p>Loading...</p>
       ) : (
-        <div>
+        <div className='container'>
           <Gallery
             images={photos}
             onClick={handleClick}
             enableImageSelection={false}
+            
           />
           {!!currentImage && (
             <Lightbox
