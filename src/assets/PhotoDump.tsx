@@ -18,7 +18,7 @@ async function getPhotos(): Promise<CustomPhoto[]> {
     const promise = exifr.parse(photo)
       .then(output => {
         const caption = output ? output.ImageDescription : 'No Comment'
-        localPhotoArray.push({ src: photo, original: photo, width: 192, height: 108, thumbnailCaption: caption })
+        localPhotoArray.push({ src: photo, original: photo, width: 160, height: 108, thumbnailCaption: caption })
       })
       .catch(error => {
         console.error('Error parsing EXIF data', error)

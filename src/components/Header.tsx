@@ -1,8 +1,6 @@
 import { NavLink } from "react-router-dom"
 import logo from "../assets/photos/stock-photos/dog-stock.jpg"
 
-// import logo from './../images/clarion-horn.png'
-
 export default function Header() {
 
     const section = "section nav-text link-text"
