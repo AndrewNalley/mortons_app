@@ -69,6 +69,7 @@ const Contact = () => {
                             })}
                             className='form-control formInput'
                             placeholder='Name'
+                            autoComplete='name'
                         ></input>
                         {errors.name && <span className='errorMessage'>Please enter your name{errors?.text?.message?.toString()}</span>}
                     </div>
@@ -82,6 +83,7 @@ const Contact = () => {
                             })}
                             className='form-control formInput'
                             placeholder='Email address'
+                            autoComplete='email'
                         ></input>
                         {errors.email && (
                             <span className='errorMessage'>Please enter a valid email address</span>
@@ -102,6 +104,7 @@ const Contact = () => {
                             })}
                             className='form-control formInput'
                             placeholder='Subject'
+                            autoComplete='off'
                         ></input>
                         {errors.subject && (
                             <span className='errorMessage'>Please enter a subject{errors?.text?.message?.toString()}</span>
@@ -118,6 +121,7 @@ const Contact = () => {
                             })}
                             className='form-control formInput'
                             placeholder='Message'
+                            autoComplete='off'
                         ></textarea>
                         {errors.message && <span className='errorMessage'>Please enter a message</span>}
                     </div>
