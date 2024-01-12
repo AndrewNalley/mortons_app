@@ -1,0 +1,9 @@
+{
+  "short_name": "mortons_app",
+  "name": "Mortons Mementos",
+  "icons": [],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#fffff0"
+}
