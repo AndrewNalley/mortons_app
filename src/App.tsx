@@ -28,11 +28,11 @@ import '@picocss/pico'
 // instantiate router 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path='/' element={<RootLayout />}>
-      <Route index element={<Home />} />
-      <Route path='about' element={<About />} />
-      <Route path='gallery' element={<Gallery />} />
-      <Route path='contact' element={<Contact />} />
+    <Route path='mortons_app' element={<RootLayout />}>
+      <Route path='/home' element={<Home />} />
+      <Route path='/about' element={<About />} />
+      <Route path='/gallery' element={<Gallery />} />
+      <Route path='/contact' element={<Contact />} />
       <Route path='*' element={<NotFound />} />
     </Route>
 
