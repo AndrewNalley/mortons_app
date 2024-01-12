@@ -9,7 +9,7 @@ export default function Header() {
         <>
             <header className="header-container">
                 <nav className="left-section">
-                    <NavLink className={section} to='/'>Home</NavLink>
+                    <NavLink className={section} to=''>Home</NavLink>
                     <NavLink className={section} to='about'>About</NavLink>
                 </nav>
                 <div className="center-section">
