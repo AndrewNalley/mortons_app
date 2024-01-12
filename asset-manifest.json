@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/mortons_app/static/css/main.fec0c6ff.css",
-    "main.js": "/mortons_app/static/js/main.de7df724.js",
+    "main.js": "/mortons_app/static/js/main.ae785482.js",
     "static/media/Craft_Lindsey-44.jpg": "/mortons_app/static/media/Craft_Lindsey-44.e7731aab1cf9274ec6f5.jpg",
     "static/media/Craft_Lindsey-29.jpg": "/mortons_app/static/media/Craft_Lindsey-29.302f51869e88bea12fcf.jpg",
     "static/media/Craft_Lindsey-31.jpg": "/mortons_app/static/media/Craft_Lindsey-31.5df1c8580ce4fb53bea9.jpg",
@@ -70,10 +70,10 @@
     "static/media/dog-stock.jpg": "/mortons_app/static/media/dog-stock.a2a07e12d443447d0bda.jpg",
     "index.html": "/mortons_app/index.html",
     "main.fec0c6ff.css.map": "/mortons_app/static/css/main.fec0c6ff.css.map",
-    "main.de7df724.js.map": "/mortons_app/static/js/main.de7df724.js.map"
+    "main.ae785482.js.map": "/mortons_app/static/js/main.ae785482.js.map"
   },
   "entrypoints": [
     "static/css/main.fec0c6ff.css",
-    "static/js/main.de7df724.js"
+    "static/js/main.ae785482.js"
   ]
 }
