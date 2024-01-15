@@ -1,15 +1,17 @@
 import exifr from 'exifr'
-import { Image } from 'react-grid-gallery'
 
-export interface CustomPhoto extends Image {
-  original: string;
+export interface Photo {
+  src: string
+  width: number
+  height: number
+  title: string
 }
 
 const upperLimit = 65;
 
 // Use forEach to loop through the range of images
-async function getPhotos(): Promise<CustomPhoto[]> {
-  const localPhotoArray: CustomPhoto[] = []
+async function getPhotos(): Promise<Photo[]> {
+  const localPhotoArray: Photo[] = []
   const promises: Promise<void>[] = []
 
   Array.from({ length: upperLimit }, (_, index) => {
@@ -18,7 +20,7 @@ async function getPhotos(): Promise<CustomPhoto[]> {
     const promise = exifr.parse(photo)
       .then(output => {
         const caption = output ? output.ImageDescription : 'No Comment'
-        localPhotoArray.push({ src: photo, original: photo, width: 160, height: 108, thumbnailCaption: caption })
+        localPhotoArray.push({ src: photo, width: 1920, height: 1080, title: caption })
       })
       .catch(error => {
         console.error('Error parsing EXIF data', error)
