@@ -1,27 +1,15 @@
-import { NavLink } from "react-router-dom"
-import logo from "../assets/photos/stock-photos/dog-stock.jpg"
+import logo from '../assets/SVGs/CircleFullShopNameBlue.svg'
+import NavBar from './NavBar';
 
 export default function Header() {
 
-    const section = "section nav-text link-text"
-
     return (
         <>
-            <header className="header-container">
-                <nav className="left-section">
-                    <NavLink className={section} to=''>Home</NavLink>
-                    <NavLink className={section} to='about'>About</NavLink>
-                </nav>
-                <div className="center-section">
-                    <img className="main-photo" src={logo} alt="dog" height={100} width={100} />
-                    <h1 className="main-logo-text">Morton's Mementos</h1>
-                    <p className="sub-logo-text">and Eclectic Gifts</p>
-                </div>
-                <nav className="right-section">
-                    <NavLink className={section} to='gallery'>Gallery</NavLink>
-                    <NavLink className={section} to='contact'>Contact</NavLink>
-                </nav>
-            </header>
+            <div className="header-container">
+                <img className='header-logo' src={logo} alt="logo" width={500} />
+            </div>
+            <NavBar />
+
         </>
     );
 }
