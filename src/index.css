@@ -1,8 +1,20 @@
+/* Global Variables */
+:root {
+  --teal: teal;
+  --pink: rgb(255, 255, 255);
+  --ivory: #fffff0;
+  --oldWhite: antiquewhite;
+  --black: rgb(1, 1, 7);
+  background-color: var(--ivory);
+}
+@import url('https://fonts.googleapis.com/css?family=Cardo');
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: 'Cardo', serif, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
+
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -11,4 +23,3 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-

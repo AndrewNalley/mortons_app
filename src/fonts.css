@@ -1,0 +1,17 @@
+
+
+  .nav-text {
+    color: var(--black);
+  }
+  
+  .footer-text {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: small;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .link-text {
+    color: var(--teal);
+  }

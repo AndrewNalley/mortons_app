@@ -1,12 +1,3 @@
-/* Global Variables */
-:root {
-  --teal: teal;
-  --pink: rgb(255, 255, 255);
-  --ivory: #fffff0;
-  --oldWhite: antiquewhite;
-  --black: rgb(1, 1, 7);
-  background-color: var(--ivory);
-}
 
 .app-main {
   padding: 1px;
@@ -80,7 +71,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: cursive;
 }
 
 .footer-container {
@@ -101,36 +91,3 @@
   display: flex;
   justify-content: space-around;
 }
-
-/* Fonts */
-.main-logo-text {
-  font-family: cursive;
-  font-size: 24px;
-  margin-bottom: 5px;
-}
-
-.sub-logo-text {
-  font-family: Snell Roundhand, cursive;
-  font-size: 20px;
-}
-
-.nav-text {
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  color: var(--black);
-}
-
-.footer-text {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-size: small;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.link-text {
-  color: var(--teal);
-}
-
-
-
-
