@@ -1,4 +1,4 @@
-import logo from "../assets/SVGs/CircleLogoTwoTone.svg"
+import logo from "../assets/SVGs/CircleFullShopNameBlue.svg"
 // import { SocialIcon } from 'react-social-icons'
 // import 'react-social-icons/instagram'
 // import 'react-social-icons/twitter'
@@ -14,7 +14,7 @@ export default function Footer() {
                     <SocialIcon url="www.twitter.com" />
                     <SocialIcon url="www.facebook.com" />
                 </div> */}
-                <img src={logo} alt="Morton's Logo" width={200} />
+                <img src={logo} alt="Morton's Logo" width={400} />
 
             </div>
             <p className="footer-text">©️ COPYRIGHT {currentYear} | SITE DESIGN BY ANDREW NALLEY </p>

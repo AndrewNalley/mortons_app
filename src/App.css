@@ -15,14 +15,44 @@
 .header-container {
   display: flex;
   justify-content: center;
-  max-height: 5%;
+  align-items: center;
   overflow: hidden;
-  margin-bottom: -90px;
+  margin-bottom: -10px;
+  padding-top: 35px;
 }
 
 .header-logo {
   height: auto;
-  clip-path: inset(30% 0 30% 0);
+}
+/* Center section with shop name and description */
+
+.center-section {
+  text-align: center;
+  border-left: 1px solid #000;
+  border-right: 1px solid #000;
+}
+
+.left-section {
+  display: flex;
+  flex-direction: column;
+  align-self: left;
+  align-items: flex-end;
+}
+
+.right-section {
+  display: flex;
+  flex-direction: column;
+  align-self: right;
+  align-items: flex-start;
+}
+
+.section {
+  border-bottom: 1px solid #000;
+  padding: 20px;
+  box-sizing: border-box;
+  margin: -1px;
+  border-radius: 0;
+
 }
 
 .nav {
@@ -56,6 +86,15 @@
 .footer-container {
   display: grid;
   justify-content: center;
+  max-height: 5%;
+  overflow: hidden;
+  margin-top: -120px;
+  margin-bottom: -80px;
+}
+
+.footer-logo {
+  height: auto;
+  clip-path: inset(30% 0 30% 0);
 }
 
 .footer-socials {

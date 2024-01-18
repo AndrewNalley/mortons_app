@@ -20,6 +20,8 @@ import About from './pages/About';
 import NotFound from './pages/NotFound';
 import Gallery from './pages/Gallery';
 import Contact from './pages/Contact';
+import Packages from './pages/Packages';
+import Social from './pages/Social';
 
 // styles
 import './App.css';
@@ -33,6 +35,8 @@ const router = createBrowserRouter(
       <Route path='/about' element={<About />} />
       <Route path='/gallery' element={<Gallery />} />
       <Route path='/contact' element={<Contact />} />
+      <Route path='/packages' element={<Packages />} />
+      <Route path='/social' element={<Social />} />
       <Route path='*' element={<NotFound />} />
     </Route>
 
