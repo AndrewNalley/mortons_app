@@ -18,7 +18,7 @@
 
 If you like the crafts you see, reach out to the creator using the form on the contact page!
 
-GitHub pages hosting:  https://andrewnalley.github.io/mortons_app/
+Live Page:  https://www.mortonsmementos.com
 
 ## Credits
 
