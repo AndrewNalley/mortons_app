@@ -26,6 +26,7 @@ import Social from './pages/Social';
 // styles
 import './App.css';
 import '@picocss/pico'
+import './fonts.css'
 
 // instantiate router 
 const router = createBrowserRouter(
