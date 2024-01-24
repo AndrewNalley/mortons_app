@@ -5,6 +5,15 @@
   --ivory: #fffff0;
   --oldWhite: antiquewhite;
   --black: rgb(1, 1, 7);
+
+  /* logo color scheme */
+  --blue-dark: #394F61;
+  --blue: #506b82;
+  --blue-pale: #809DB0;
+  --gray-md: #D2D2D2;
+  --gray-light: #F1F1F3;
+
+
   background-color: var(--ivory);
 }
 @import url('https://fonts.googleapis.com/css?family=Cardo');

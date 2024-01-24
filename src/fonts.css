@@ -1,17 +1,27 @@
 
+.page-header-text {
+  font-family: 'Cardo';
+  color: var(--blue-dark)
+}
 
-  .nav-text {
-    color: var(--black);
-  }
-  
-  .footer-text {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: small;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .link-text {
-    color: var(--teal);
-  }
+h1, h2, h3, h4, h5, h6, p {
+  font-family: 'Cardo';
+  color: var(--blue-dark)
+}
+
+.link-text {
+  color: var(--blue-dark);
+}
+
+button {
+  color: var(--gray-light);
+  background-color: var(--blue-dark);
+}
+
+.footer-text {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: small;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
