@@ -35,7 +35,7 @@ export default function PhotoGallery() {
 
   return (
     <section className='page'>
-      <h2 className='page-header'>Mementos Gallery</h2>
+      <h2 className='page-header page-header-text'>Mementos Gallery</h2>
       <PhotoAlbum
             layout="rows"
             photos={featuredArray}
@@ -48,7 +48,7 @@ export default function PhotoGallery() {
             plugins={[Captions]}
           />
 
-      <h2 className='page-header'>Full Gallery</h2>
+      <h2 className='page-header page-header-text'>Full Gallery</h2>
           <PhotoAlbum
             layout="columns"
             photos={photosArray}

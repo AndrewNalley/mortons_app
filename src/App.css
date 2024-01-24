@@ -91,3 +91,15 @@
   display: flex;
   justify-content: space-around;
 }
+
+.react-photo-album {
+  border: var(--gray-md);
+  border-style: solid;
+  padding: 5px;
+}
+
+.bold-photo {
+  border: var(--gray-md);
+  border-style: solid;
+  padding: 5px;
+}
