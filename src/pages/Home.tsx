@@ -1,4 +1,3 @@
-import FillerText from "../components/FillerText";
 import bigSpringPhoto from '../assets/photos/owner-photos/BigSpring.jpeg'
 
 export default function Home() {
