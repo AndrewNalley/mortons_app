@@ -5,7 +5,7 @@ import div1 from '../assets/SVGs/Other/div1.svg'
 export default function About() {
   return (
     <section className='page container'>
-      <h1 className='page-header page-header-text'>Our Craft</h1>
+      <h1 className='page-header page-header-text'>About</h1>
       <div className='grid'>
         <h4 className='cursive'>Wedding Flower Preservation </h4>
         <h4 className='cursive'>Resin Coasters and Decorative Serving Trays </h4>
@@ -15,6 +15,7 @@ export default function About() {
         <img src={ownerPhoto} className='bold-photo photo-center' alt='beach' width={300} />
         <div>
         <br />
+        <h3 className='cursive'>Hello!</h3>
           <p>Anyone who knows me could tell you the most important thing to me is my baby boy Morton. 🐶🩵 </p>
           <p>He is a Samoyed, almost 2 years old and the bestest boy. The second thing someone who knows me will tell you, is that I love gift giving and saving memories of a special moment. From those loves, this shop was born… </p>
           <p>We started about a year ago, preserving a close friends wedding bouquet, and loved it so much!</p>
