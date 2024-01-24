@@ -1,15 +1,28 @@
 
 .page-header-text {
-  font-family: 'Cardo';
-  color: var(--blue-dark)
+  font-family: 'Lovers Quarrel', cursive;
+  color: var(--blue-dark);
+  /* background-color: var(--blue-pale); */
 }
 
-h1, h2, h3, h4, h5, h6, p {
-  font-family: 'Cardo';
-  color: var(--blue-dark)
+p {
+  font-family: 'Cardo', serif;
+}
+
+.cardo {
+  font-family: 'Cardo', serif;
+}
+
+.serif {
+  font-family: 'Baskervville', serif;
+}
+
+.cursive {
+  font-family: 'Lovers Quarrel', cursive;
 }
 
 .link-text {
+  font-family: 'Lovers Quarrel', cursive;
   color: var(--blue-dark);
 }
 

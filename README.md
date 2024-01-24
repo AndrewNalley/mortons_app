@@ -32,6 +32,8 @@ TypeScript error handling: https://engineering.udacity.com/handling-errors-like-
 
 BrowserRouter tutorial: https://www.youtube.com/watch?v=5s57C7leXc4
 
+Dividers: Image by <a href="https://www.freepik.com/free-vector/calligraphic-ornamental-line-divider-collection_12261874.htm#query=divider%20svg&position=0&from_view=keyword&track=ais&uuid=f7a0e948-790c-4081-b259-8413702a7d3d">Freepik</a>
+
 
 ## License
 

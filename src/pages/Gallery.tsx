@@ -2,11 +2,11 @@ import { useState } from 'react'
 
 import { photosArray } from '../assets/PhotoDump'
 
-import PhotoAlbum from "react-photo-album";
-import Lightbox from "yet-another-react-lightbox";
-import "yet-another-react-lightbox/styles.css";
-import Captions from "yet-another-react-lightbox/plugins/captions";
-import "yet-another-react-lightbox/plugins/captions.css";
+import PhotoAlbum from 'react-photo-album';
+import Lightbox from 'yet-another-react-lightbox';
+import 'yet-another-react-lightbox/styles.css';
+import Captions from 'yet-another-react-lightbox/plugins/captions';
+import 'yet-another-react-lightbox/plugins/captions.css';
 
 
 
@@ -35,7 +35,7 @@ export default function PhotoGallery() {
 
   return (
     <section className='page'>
-      <h2 className='page-header page-header-text'>Mementos Gallery</h2>
+      <h1 className='page-header page-header-text'>Mementos Gallery</h1>
       <PhotoAlbum
             layout="rows"
             photos={featuredArray}
@@ -46,6 +46,7 @@ export default function PhotoGallery() {
             open={featuredIndex >= 0}
             close={() => setfeaturedIndex(-1)}
             plugins={[Captions]}
+            aria-busy="true"
           />
 
       <h2 className='page-header page-header-text'>Full Gallery</h2>
@@ -59,6 +60,7 @@ export default function PhotoGallery() {
             open={index >= 0}
             close={() => setIndex(-1)}
             plugins={[Captions]}
+            aria-busy="true"
           />
     </section>
   );

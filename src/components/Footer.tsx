@@ -1,23 +1,18 @@
-import logo from "../assets/SVGs/CircleFullShopNameBlue.svg"
-// import { SocialIcon } from 'react-social-icons'
-// import 'react-social-icons/instagram'
-// import 'react-social-icons/twitter'
-// import 'react-social-icons/facebook'
+import logo from '../assets/SVGs/Logo/CircleFullShopNameBlue.svg'
+import div1 from '../assets/SVGs/Other/div1.svg'
+
 
 export default function Footer() {
     const currentYear = new Date().getFullYear();
     return (
         <>
-            <div className="footer-container">
-                {/* <div className="footer-socials">
-                    <SocialIcon url="https://www.instagram.com/mortons.mementos/" />
-                    <SocialIcon url="www.twitter.com" />
-                    <SocialIcon url="www.facebook.com" />
-                </div> */}
-                <img src={logo} alt="Morton's Logo" width={400} />
-
+            <div className='footer-container'>
+                <img src={logo} alt='Mortons Logo' width={400} />
+                <img src={div1} alt='divider' />
             </div>
-            <p className="footer-text">©️ COPYRIGHT {currentYear} | SITE DESIGN BY ANDREW NALLEY </p>
+            <div>
+                <p className='footer-text'>©️ COPYRIGHT {currentYear} LINDSEY NALLEY | SITE DESIGN BY ANDREW NALLEY </p>
+            </div>
         </>
     );
 }

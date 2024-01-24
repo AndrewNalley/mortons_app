@@ -1,4 +1,3 @@
-
 .app-main {
   padding: 1px;
 }
@@ -15,6 +14,7 @@
 .header-logo {
   height: auto;
 }
+
 /* Center section with shop name and description */
 
 .center-section {
@@ -63,6 +63,17 @@
   color: #333;
 }
 
+.divider-header {
+  padding-top: 1%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.photo-center {
+  justify-self: center;
+}
+
 .page {
   padding: 5%;
 }
@@ -70,6 +81,11 @@
 .page-header {
   display: flex;
   justify-content: center;
+  align-items: center;
+}
+
+.about {
+  display: flex;
   align-items: center;
 }
 

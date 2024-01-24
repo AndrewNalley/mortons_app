@@ -13,10 +13,9 @@
   --gray-md: #D2D2D2;
   --gray-light: #F1F1F3;
 
-
   background-color: var(--ivory);
 }
-@import url('https://fonts.googleapis.com/css?family=Cardo');
+@import url('https://fonts.googleapis.com/css?family=Baskervville&family=Cardo&family=Lovers+Quarrel&display=swap');
 
 body {
   margin: 0;
