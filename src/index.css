@@ -15,11 +15,11 @@
 
   background-color: var(--ivory);
 }
-@import url('https://fonts.googleapis.com/css?family=Baskervville&family=Cardo&family=Lovers+Quarrel&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Baskervville&family=Cardo&family=Tangerine&family=Montserrat&display=swap');
 
 body {
   margin: 0;
-  font-family: 'Cardo', serif, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: 'Montserrat', sans-serif, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
 

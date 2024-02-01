@@ -50,9 +50,9 @@ const Contact = () => {
     }
 
     return (
-        <section className='page container nav-font'>
+        <section className='page container'>
             <h1 className='page-header page-header-text'>Contact Us</h1>
-            <h4 className='heading-center'>Looking for something special? Let us know!</h4>
+            <h4 className='page-header'>Looking for something special? Let us know!</h4>
             <form id='contact-form' onSubmit={handleSubmit(onSubmit)} noValidate>
                 <div className='row formRow'>
                     <div className='col-6'>
