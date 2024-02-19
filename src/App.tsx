@@ -3,28 +3,23 @@ import {
   Route,
   createRoutesFromElements,
   RouterProvider
-} from 'react-router-dom';
-
-//polyfills
-// import 'core-js/stable';
-// import 'regenerator-runtime/runtime';
+} from 'react-router-dom'
 
 // layout
-import RootLayout from './layouts/RootLayout';
-
-// components
+import RootLayout from './layouts/RootLayout'
 
 // pages
-import Home from './pages/Home';
-import About from './pages/About';
-import NotFound from './pages/NotFound';
-import Gallery from './pages/Gallery';
-import Contact from './pages/Contact';
-import Packages from './pages/Packages';
-import Social from './pages/Social';
+import Home from './pages/Home'
+import About from './pages/About'
+import NotFound from './pages/NotFound'
+import Gallery from './pages/Gallery'
+import Contact from './pages/Contact'
+import Packages from './pages/Packages'
+import Social from './pages/Social'
+import FullGallery from './pages/FullGallery'
 
 // styles
-import './App.css';
+import './App.css'
 import '@picocss/pico'
 import './fonts.css'
 
@@ -38,6 +33,7 @@ const router = createBrowserRouter(
       <Route path='/contact' element={<Contact />} />
       <Route path='/packages' element={<Packages />} />
       <Route path='/social' element={<Social />} />
+      <Route path='gallery/full' element={<FullGallery />} />
       <Route path='*' element={<NotFound />} />
     </Route>
 
