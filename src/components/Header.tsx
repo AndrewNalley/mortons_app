@@ -1,5 +1,4 @@
 import logo from '../assets/SVGs/Logo/CircleLogoTwoTone.svg'
-import div1 from '../assets/SVGs/Other/div1.svg'
 import { NavLink } from 'react-router-dom'
 
 export default function Header() {
@@ -8,9 +7,6 @@ export default function Header() {
 
     return (
         <>
-            <div className='divider-header'>
-                <img src={div1} alt='divider' />
-            </div>
             <header className='header-container'>
                 <nav className='left-section'>
                     <NavLink className={section} to=''>Home</NavLink>
