@@ -17,6 +17,7 @@ import Contact from './pages/Contact'
 import Packages from './pages/Packages'
 import Social from './pages/Social'
 import FullGallery from './pages/FullGallery'
+import BundleForm from './components/BundleForm'
 
 // styles
 import './App.css'
@@ -34,6 +35,7 @@ const router = createBrowserRouter(
       <Route path='/packages' element={<Packages />} />
       <Route path='/social' element={<Social />} />
       <Route path='gallery/full' element={<FullGallery />} />
+      <Route path='packages/form' element={<BundleForm />} />
       <Route path='*' element={<NotFound />} />
     </Route>
 
