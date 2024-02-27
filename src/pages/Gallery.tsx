@@ -19,9 +19,9 @@ export default function Gallery() {
       <MiscSwiper />
 
 
-      <span>
-        <NavLink to='full'>See the Full Gallery</NavLink>
-      </span>
+      <button className='page-header near-footer'>
+        <NavLink to='full' className={'button-text'}>See the Full Gallery</NavLink>
+      </button>
     </section>
   );
 }

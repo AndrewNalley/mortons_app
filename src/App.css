@@ -52,13 +52,11 @@
   padding: 1%;
 }
 
-/* Adjust link styles as needed */
 .link {
   text-decoration: none;
   color: #000;
 }
 
-/* Adjust hover styles for links if needed */
 .link:hover {
   color: #333;
 }
@@ -89,13 +87,18 @@
   align-items: center;
 }
 
+.near-footer {
+  margin-bottom: 21%;
+}
+
 .footer-container {
   display: grid;
   justify-content: center;
   max-height: 5%;
   overflow: hidden;
-  margin-top: -120px;
+  margin-top: -100px;
   margin-bottom: -80px;
+  z-index: -1;
 }
 
 .footer-logo {

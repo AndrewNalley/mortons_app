@@ -14,7 +14,7 @@ import About from './pages/About'
 import NotFound from './pages/NotFound'
 import Gallery from './pages/Gallery'
 import Contact from './pages/Contact'
-import Packages from './pages/Packages'
+import Package from './pages/Package'
 import Social from './pages/Social'
 import FullGallery from './pages/FullGallery'
 import BundleForm from './components/BundleForm'
@@ -32,10 +32,10 @@ const router = createBrowserRouter(
       <Route path='/about' element={<About />} />
       <Route path='/gallery' element={<Gallery />} />
       <Route path='/contact' element={<Contact />} />
-      <Route path='/packages' element={<Packages />} />
+      <Route path='/package' element={<Package />} />
       <Route path='/social' element={<Social />} />
       <Route path='gallery/full' element={<FullGallery />} />
-      <Route path='packages/form' element={<BundleForm />} />
+      <Route path='package/form' element={<BundleForm />} />
       <Route path='*' element={<NotFound />} />
     </Route>
 

@@ -18,7 +18,7 @@ export default function Header() {
                 </div>
                 <nav className='right-section'>
                     <NavLink className={section} to='gallery'>Gallery</NavLink>
-                    <NavLink className={section} to='packages'>Packages</NavLink>
+                    <NavLink className={section} to='package'>Package</NavLink>
                     <NavLink className={section} to='contact'>Contact</NavLink>
                 </nav>
             </header>
