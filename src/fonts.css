@@ -31,6 +31,10 @@ button {
   background-color: var(--blue-dark);
 }
 
+.button-text {
+  color: white;
+}
+
 .footer-text {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: small;

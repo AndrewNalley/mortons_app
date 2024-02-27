@@ -15,7 +15,7 @@ const panes = [
                 </TableHeader>
                 <TableBody id="largeItems">
                     {largeItemsArray.map(item => (
-                        <TableRow>
+                        <TableRow key={item.id}>
                             <TableCell>{item.description}</TableCell>
                             <TableCell>$ {item.price}</TableCell>
                         </TableRow>
@@ -41,7 +41,7 @@ const panes = [
             </TableHeader>
             <TableBody id="smallItems">
                 {smallItemsArray.map(item => (
-                    <TableRow>
+                    <TableRow key={item.id}>
                         <TableCell>{item.description}</TableCell>
                         <TableCell>$ {item.price}</TableCell>
                     </TableRow>
@@ -65,7 +65,7 @@ const panes = [
             </TableHeader>
             <TableBody id="hardware">
                 {hardwareChoicesArray.map(item => (
-                    <TableRow>
+                    <TableRow key={item.id}>
                         <TableCell>{item.name}</TableCell>
                     </TableRow>
                 ))}
@@ -88,7 +88,7 @@ const panes = [
             </TableHeader>
             <TableBody id="colors">
                 {colorChoicesArray.map(item => (
-                    <TableRow>
+                    <TableRow key={item.id}>
                         <TableCell>{item.name}</TableCell>
                     </TableRow>
                 ))}
@@ -103,6 +103,6 @@ const panes = [
     },
 ]
 
-const TabComponent = () => <Tab menu={{ secondary: true, pointing: true }} panes={panes} />
+const TabComponent = () => <Tab menu={{ secondary: true, pointing: true }} panes={panes} renderActiveOnly={true} />
 
 export default TabComponent

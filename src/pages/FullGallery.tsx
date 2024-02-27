@@ -16,18 +16,20 @@ export default function FullGallery() {
     <section className='page'>
 
       <h1 className='page-header page-header-text'>Full Gallery</h1>
-          <PhotoAlbum
-            layout="columns"
-            photos={photosArray}
-            onClick={({ index: current }) => setIndex(current)} />
-          <Lightbox
-            index={index}
-            slides={photosArray}
-            open={index >= 0}
-            close={() => setIndex(-1)}
-            plugins={[Captions]}
-            aria-busy="true"
-          />
+      <div className='near-footer'>
+        <PhotoAlbum
+          layout="columns"
+          photos={photosArray}
+          onClick={({ index: current }) => setIndex(current)} />
+        <Lightbox
+          index={index}
+          slides={photosArray}
+          open={index >= 0}
+          close={() => setIndex(-1)}
+          plugins={[Captions]}
+          aria-busy="true"
+        />
+      </div>
 
     </section>
   );
