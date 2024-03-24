@@ -1,114 +1,10 @@
 import { useForm } from 'react-hook-form'
-import { TabPane, Tab, Table, TableHeader, TableBody, TableCell, TableFooter, TableHeaderCell, TableRow } from 'semantic-ui-react'
+import { Table, TableHeader, TableBody, TableCell, TableFooter, TableHeaderCell, TableRow } from 'semantic-ui-react'
 import { colorChoicesArray, hardwareChoicesArray, largeItemsArray, smallItemsArray } from '../assets/storeItems/Items'
 import emailjs from 'emailjs-com'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.min.css'
-
-
-const panes = [
-    {
-        menuItem: 'Large ', render: () => <TabPane><TabPane>
-            <Table padded>
-                <TableHeader>
-                    <TableRow>
-                        <TableHeaderCell>Items</TableHeaderCell>
-                        <TableHeaderCell>Price</TableHeaderCell>
-                        <TableHeaderCell>Quantity</TableHeaderCell>
-                    </TableRow>
-                </TableHeader>
-                <TableBody id="largeItems">
-                    {largeItemsArray.map(item => (
-                        <TableRow key={item.id}>
-                            <TableCell>{item.description}</TableCell>
-                            <TableCell>$ {item.price}</TableCell>
-                        </TableRow>
-                    ))}
-                </TableBody>
-                <TableFooter>
-                    <TableRow>
-                        <TableHeaderCell>Items selected:</TableHeaderCell>
-                        <TableHeaderCell>Total Price:</TableHeaderCell>
-                    </TableRow>
-                </TableFooter>
-            </Table>
-        </TabPane></TabPane>
-    },
-    {
-        menuItem: 'Small ', render: () => <TabPane><Table padded>
-            <TableHeader>
-                <TableRow>
-                    <TableHeaderCell>Items</TableHeaderCell>
-                    <TableHeaderCell>Price</TableHeaderCell>
-                    <TableHeaderCell>Quantity</TableHeaderCell>
-                </TableRow>
-            </TableHeader>
-            <TableBody id="smallItems">
-                {smallItemsArray.map(item => (
-                    <TableRow key={item.id}>
-                        <TableCell>{item.description}</TableCell>
-                        <TableCell>$ {item.price}</TableCell>
-                    </TableRow>
-                ))}
-            </TableBody>
-            <TableFooter>
-                <TableRow>
-                    <TableHeaderCell>Items selected:</TableHeaderCell>
-                    <TableHeaderCell>Total Price:</TableHeaderCell>
-                </TableRow>
-            </TableFooter>
-        </Table></TabPane>
-    },
-    {
-        menuItem: 'Hardware ', render: () => <TabPane><Table padded>
-            <TableHeader>
-                <TableRow>
-                    <TableHeaderCell>Items</TableHeaderCell>
-                    <TableHeaderCell>Selection</TableHeaderCell>
-                </TableRow>
-            </TableHeader>
-            <TableBody id="hardware">
-                {hardwareChoicesArray.map(item => (
-                    <TableRow key={item.id}>
-                        <TableCell>{item.name}</TableCell>
-                    </TableRow>
-                ))}
-            </TableBody>
-            <TableFooter>
-                <TableRow>
-                    <TableHeaderCell>Items selected:</TableHeaderCell>
-                    <TableHeaderCell>Total Price:</TableHeaderCell>
-                </TableRow>
-            </TableFooter>
-        </Table></TabPane>
-    },
-    {
-        menuItem: 'Colors ', render: () => <TabPane><Table padded>
-            <TableHeader>
-                <TableRow>
-                    <TableHeaderCell>Items</TableHeaderCell>
-                    <TableHeaderCell>Selection</TableHeaderCell>
-                </TableRow>
-            </TableHeader>
-            <TableBody id="colors">
-                {colorChoicesArray.map(item => (
-                    <TableRow key={item.id}>
-                        <TableCell>{item.name}</TableCell>
-                    </TableRow>
-                ))}
-            </TableBody>
-            <TableFooter>
-                <TableRow>
-                    <TableHeaderCell>Items selected:</TableHeaderCell>
-                    <TableHeaderCell>Total Price:</TableHeaderCell>
-                </TableRow>
-            </TableFooter>
-        </Table></TabPane>
-    },
-]
-
-const TabComponent = () => <Tab menu={{ secondary: true, pointing: true }} panes={panes} renderActiveOnly={true} />
-
+import { totalmem } from 'os'
 
 const SubmitForm = () => {
 
@@ -116,14 +12,15 @@ const SubmitForm = () => {
         register,
         handleSubmit,
         reset,
+        setValue,
         formState: { errors }
     } = useForm()
 
     // displays success message when submission is successful
     const toastifySuccess = () => {
         toast('Form sent!', {
-            position: 'bottom-right',
-            autoClose: 5000,
+            position: 'top-right',
+            autoClose: 10000,
             hideProgressBar: true,
             closeOnClick: true,
             pauseOnHover: true,
@@ -134,110 +31,283 @@ const SubmitForm = () => {
     };
 
     const onSubmit = async (data: any) => {
-        const { name, email, subject, message } = data;
+
+        let grandTotal = 0
+
+        const { largeItems, smallItems, hardware, color, message, name, email } = data;
 
         try {
-            const templateParams = {
-                name,
-                email,
-                subject,
-                message
+            const largeItemChoices = (): string => {
+                for (let i = 0; i < largeItemsArray.length; i++) {
+                    const largeItem = largeItems[largeItemsArray[i].id]
+                    const baseItem = largeItemsArray[i]
+                    if (largeItem.quantity > 0) {
+                        const totalprice = (baseItem.price * largeItem.quantity)
+                        grandTotal += totalprice
+                        return (
+                            `Large item ordered: ${baseItem.description} 
+                            \nUnit Price: $${baseItem.price}  
+                            \nQuantity: ${largeItem.quantity}
+                            \nItem Total Price: $${totalprice}`)
+                    }
+                }
+                return "No large items ordered"
+            }
+            const smallItemChoices = (): string => {
+                for (let i = 0; i < smallItemsArray.length; i++) {
+                    const smallItem = smallItems[smallItemsArray[i].id]
+                    const baseItem = smallItemsArray[i]
+                    if (smallItem.quantity > 0) {
+                        const totalprice = (baseItem.price * smallItem.quantity)
+                        grandTotal += totalprice
+                        return (`Small item ordered: ${baseItem.description} 
+                            \nUnit Price: $${baseItem.price}  
+                            \nQuantity: ${smallItem.quantity}
+                            \nItem Total Price: $${totalprice}`);
+                    }
+                }
+                return "No small items ordered"
+            }
+
+            const hardwareChoices = (): string => {
+                const selectedHardware = Object.entries(hardware)
+                    .filter(([key, value]) => value === true)
+                    .map(([key, value]) => key);
+
+                if (selectedHardware.length > 0) {
+                    return `Hardware Choices: ${selectedHardware.join(', ')}`;
+                } else {
+                    return 'No hardware selected.';
+                }
             };
-            await emailjs.send(
-                process.env.REACT_APP_SERVICE_ID ?? 'default_service_id',
-                process.env.REACT_APP_TEMPLATE_ID ?? 'default_template_id',
-                templateParams,
-                process.env.REACT_APP_PUBLIC_KEY ?? 'default_public_key'
-            );
-            reset()
-            toastifySuccess()
+
+            const colorChoices = (): string => {
+                const selectedColor = Object.entries(color)
+                    .filter(([key, value]) => value === true)
+                    .map(([key, value]) => key);
+
+                if (selectedColor.length > 0) {
+                    return `color Choices: ${selectedColor.join(', ')}`;
+                } else {
+                    return 'No color selected.';
+                }
+            };
+
+            const printGrandTotal = (grandTotal: number): string => {
+                const formatter = new Intl.NumberFormat('en-US', {
+                    style: 'currency',
+                    currency: 'USD',
+                });
+                return formatter.format(grandTotal)
+            }
+
+            console.log(largeItemChoices())
+            console.log(smallItemChoices())
+            console.log(hardwareChoices())
+            console.log(colorChoices())
+
+            console.log(printGrandTotal(grandTotal))
+
+
+            //     const templateParams = {
+            //         largeItemChoices(),
+            //         smallItemsChoices(),
+            //         hardwareChoices(),
+            //         colorChoices(),
+            //         message,
+            //         name,
+            //         email
+            //     };
+            //     // await emailjs.send(
+            //     //     process.env.REACT_APP_SERVICE_ID ?? 'default_service_id',
+            //     //     process.env.REACT_APP_TEMPLATE_ID ?? 'default_template_id',
+            //     //     templateParams,
+            //     //     process.env.REACT_APP_PUBLIC_KEY ?? 'default_public_key'
+            //     // );
+                toastifySuccess()
         } catch (e) {
             console.error(e)
         }
+        reset()
     }
 
     return (
         <section className='page container'>
-            <h1 className='page-header page-header-text'>Weeding Bundle Form</h1>
+            <h1 className="page-header page-header-text">Bundle Form</h1>
             <h4 className='page-header'>Let's make your special moments last forever</h4>
             <form id='contact-form' onSubmit={handleSubmit(onSubmit)} noValidate>
-                <div className='row formRow'>
-                    <div className='col-6'>
-                        <input
-                            type='text'
-                            // name='name'
-                            {...register('name', {
-                                required: { value: true, message: 'Please enter your name' },
-                                maxLength: {
-                                    value: 30,
-                                    message: 'Please use 30 characters or less'
-                                }
-                            })}
-                            className='form-control formInput'
-                            placeholder='Name'
-                            autoComplete='name'
-                        ></input>
-                        {errors.name && <span className='errorMessage'>Please enter your name{errors?.text?.message?.toString()}</span>}
-                    </div>
-                    <div className='col-6'>
-                        <input
-                            type='email'
-                            // name='email'
-                            {...register('email', {
-                                required: true,
-                                pattern: /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
-                            })}
-                            className='form-control formInput'
-                            placeholder='Email address'
-                            autoComplete='email'
-                        ></input>
-                        {errors.email && (
-                            <span className='errorMessage'>Please enter a valid email address</span>
-                        )}
-                    </div>
-                </div>
-                <div className='row formRow'>
-                    <div className='col'>
-                        <input
-                            type='text'
-                            // name='subject'
-                            {...register('subject', {
-                                required: { value: true, message: 'Please enter a subject' },
-                                maxLength: {
-                                    value: 75,
-                                    message: 'Subject cannot exceed 75 characters'
-                                }
-                            })}
-                            className='form-control formInput'
-                            placeholder='Subject'
-                            autoComplete='off'
-                        ></input>
-                        {errors.subject && (
-                            <span className='errorMessage'>Please enter a subject{errors?.text?.message?.toString()}</span>
-                        )}
-                    </div>
-                </div>
+                <Table padded>
+                    <TableHeader>
+                        <TableRow>
+                            <TableHeaderCell>LARGE ITEMS</TableHeaderCell>
+                        </TableRow>
+                        <TableRow>
+                            <TableHeaderCell>Items</TableHeaderCell>
+                            <TableHeaderCell>Price</TableHeaderCell>
+                            <TableHeaderCell>Quantity</TableHeaderCell>
+                        </TableRow>
+                    </TableHeader>
+                    <TableBody id="largeItems">
+                        {largeItemsArray.map(item => (
+                            <TableRow key={item.id}>
+                                <TableCell>{item.description}</TableCell>
+                                <TableCell>$ {item.price}</TableCell>
+                                <TableCell>
+                                    <input
+                                        type='number'
+                                        min={0}
+                                        {...register(`largeItems[${item.id}].quantity`)}
+                                        onChange={(e) => {
+                                            const quantity = parseInt(e.target.value)
+                                            setValue(`largeItems[${item.id}].quantity`, quantity)
+                                        }}
+                                        className='form-control formInput'
+                                        placeholder='0'
+                                    ></input>
+                                </TableCell>
+                            </TableRow>
+                        ))}
+                    </TableBody>
+
+
+                    <TableHeader>
+                        <TableRow>
+                            <TableHeaderCell>SMALL ITEMS</TableHeaderCell>
+                        </TableRow>
+                        <TableRow>
+                            <TableHeaderCell>Items</TableHeaderCell>
+                            <TableHeaderCell>Price</TableHeaderCell>
+                            <TableHeaderCell>Quantity</TableHeaderCell>
+                        </TableRow>
+                    </TableHeader>
+                    <TableBody id="small-items">
+                        {smallItemsArray.map(item => (
+                            <TableRow key={item.id}>
+                                <TableCell>{item.description}</TableCell>
+                                <TableCell>$ {item.price}</TableCell>
+                                <TableCell>
+                                    <input
+                                        type='number'
+                                        min={0}
+                                        {...register(`smallItems[${item.id}].quantity`)}
+                                        onChange={(e) => {
+                                            const quantity = parseInt(e.target.value)
+                                            setValue(`smallItems[${item.id}].quantity`, quantity)
+                                        }}
+                                        className='form-control formInput'
+                                        placeholder='0'
+                                    />
+                                </TableCell>
+                            </TableRow>
+                        ))}
+                    </TableBody>
+
+                    <TableHeader>
+                        <TableRow>
+                            <TableHeaderCell>HARDWARE</TableHeaderCell>
+                        </TableRow>
+                        <TableRow>
+                            <TableHeaderCell>Items</TableHeaderCell>
+                            <TableHeaderCell>Selection</TableHeaderCell>
+                        </TableRow>
+                    </TableHeader>
+                    <TableBody id='hardware'>
+                        {hardwareChoicesArray.map(item => (
+                            <TableRow key={item.id}>
+                                <TableCell>{item.name}</TableCell>
+                                <TableCell>
+                                    <input
+                                        type='checkbox'
+                                        // name='name'
+                                        {...register(`hardware[${item.name}]`)}
+                                        className='form-control formInput'
+                                    ></input>
+                                </TableCell>
+                            </TableRow>
+                        ))}
+                    </TableBody>
+
+                    <TableHeader>
+                        <TableRow>
+                            <TableHeaderCell>Items</TableHeaderCell>
+                            <TableHeaderCell>Selection</TableHeaderCell>
+                        </TableRow>
+                    </TableHeader>
+                    <TableBody id='colors'>
+                        {colorChoicesArray.map(item => (
+                            <TableRow key={item.id}>
+                                <TableCell>{item.name}</TableCell>
+                                <TableCell>
+                                    <input
+                                        type='checkbox'
+                                        {...register(`color[${item.name}]`)}
+                                        className='form-control formInput'
+                                    ></input>
+                                </TableCell>
+                            </TableRow>
+                        ))}
+                    </TableBody>
+                    <TableFooter>
+                        <TableRow>
+                            <TableHeaderCell>Items selected:</TableHeaderCell>
+                            <TableHeaderCell>Total Price: $</TableHeaderCell>
+                        </TableRow>
+                    </TableFooter>
+                </Table>
                 <div className='row formRow'>
                     <div className='col'>
                         <textarea
                             rows={3}
                             // name='message'
                             {...register('message', {
-                                required: true
+                                required: false
                             })}
                             className='form-control formInput'
-                            placeholder='Message'
+                            placeholder='Please enter any special requests or comments here'
                             autoComplete='off'
                         ></textarea>
                         {errors.message && <span className='errorMessage'>Please enter a message</span>}
                     </div>
+                </div>
+                <div className='col-6'>
+                    <input
+                        type='text'
+                        // name='name'
+                        {...register('name', {
+                            required: { value: false, message: 'Please enter your name' },
+                            maxLength: {
+                                value: 30,
+                                message: 'Please use 30 characters or less'
+                            }
+                        })}
+                        className='form-control formInput'
+                        placeholder='Name'
+                        autoComplete='name'
+                    ></input>
+                    {errors.name && <span className='errorMessage'>Please enter your name{errors?.text?.message?.toString()}</span>}
+                </div>
+                <div className='col-6'>
+                    <input
+                        type='email'
+                        // name='email'
+                        {...register('email', {
+                            required: false,
+                            pattern: /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
+                        })}
+                        className='form-control formInput'
+                        placeholder='Email address'
+                        autoComplete='email'
+                    ></input>
+                    {errors.email && (
+                        <span className='errorMessage'>Please enter a valid email address</span>
+                    )}
                 </div>
                 <button className='submit-btn near-footer' type='submit'>
                     Submit
                 </button>
             </form>
             <ToastContainer />
-        </section>
+        </section >
     )
 }
 
