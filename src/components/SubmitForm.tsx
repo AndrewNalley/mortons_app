@@ -4,7 +4,6 @@ import { colorChoicesArray, hardwareChoicesArray, largeItemsArray, smallItemsArr
 import emailjs from 'emailjs-com'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.min.css'
-import { totalmem } from 'os'
 
 const SubmitForm = () => {
 
@@ -38,36 +37,32 @@ const SubmitForm = () => {
 
         try {
             const largeItemChoices = (): string => {
+                let result = "Large items ordered:\n"
                 for (let i = 0; i < largeItemsArray.length; i++) {
                     const largeItem = largeItems[largeItemsArray[i].id]
                     const baseItem = largeItemsArray[i]
                     if (largeItem.quantity > 0) {
-                        const totalprice = (baseItem.price * largeItem.quantity)
+                        const totalprice = baseItem.price * largeItem.quantity;
                         grandTotal += totalprice
-                        return (
-                            `Large item ordered: ${baseItem.description} 
-                            \nUnit Price: $${baseItem.price}  
-                            \nQuantity: ${largeItem.quantity}
-                            \nItem Total Price: $${totalprice}`)
+                        result += `\nDescription: ${baseItem.description}\nUnit Price: $${baseItem.price}\nQuantity: ${largeItem.quantity}\nItem Total Price: $${totalprice}. \n\n`
                     }
                 }
-                return "No large items ordered"
+                return result.trim() || "No large items ordered"
             }
+
             const smallItemChoices = (): string => {
+                let result = "Small items ordered:\n"
                 for (let i = 0; i < smallItemsArray.length; i++) {
                     const smallItem = smallItems[smallItemsArray[i].id]
                     const baseItem = smallItemsArray[i]
                     if (smallItem.quantity > 0) {
-                        const totalprice = (baseItem.price * smallItem.quantity)
+                        const totalprice = baseItem.price * smallItem.quantity
                         grandTotal += totalprice
-                        return (`Small item ordered: ${baseItem.description} 
-                            \nUnit Price: $${baseItem.price}  
-                            \nQuantity: ${smallItem.quantity}
-                            \nItem Total Price: $${totalprice}`);
+                        result += `\nDescription: ${baseItem.description}\nUnit Price: $${baseItem.price}\nQuantity: ${smallItem.quantity}\nItem Total Price: $${totalprice}. \n\n`
                     }
                 }
-                return "No small items ordered"
-            }
+                return result.trim() || "No small items ordered";
+            };
 
             const hardwareChoices = (): string => {
                 const selectedHardware = Object.entries(hardware)
@@ -75,7 +70,7 @@ const SubmitForm = () => {
                     .map(([key, value]) => key);
 
                 if (selectedHardware.length > 0) {
-                    return `Hardware Choices: ${selectedHardware.join(', ')}`;
+                    return `Hardware choices: ${selectedHardware.join(', ')}`;
                 } else {
                     return 'No hardware selected.';
                 }
@@ -87,7 +82,7 @@ const SubmitForm = () => {
                     .map(([key, value]) => key);
 
                 if (selectedColor.length > 0) {
-                    return `color Choices: ${selectedColor.join(', ')}`;
+                    return `Color choices: ${selectedColor.join(', ')}`;
                 } else {
                     return 'No color selected.';
                 }
@@ -101,29 +96,30 @@ const SubmitForm = () => {
                 return formatter.format(grandTotal)
             }
 
-            console.log(largeItemChoices())
-            console.log(smallItemChoices())
-            console.log(hardwareChoices())
-            console.log(colorChoices())
+            const largeMementos = largeItemChoices() 
+            const smallMementos = smallItemChoices()
+            const hardwareTypes = hardwareChoices()
+            const colors = colorChoices()
 
-            console.log(printGrandTotal(grandTotal))
+            const total = printGrandTotal(grandTotal)
 
 
-            //     const templateParams = {
-            //         largeItemChoices(),
-            //         smallItemsChoices(),
-            //         hardwareChoices(),
-            //         colorChoices(),
-            //         message,
-            //         name,
-            //         email
-            //     };
-            //     // await emailjs.send(
-            //     //     process.env.REACT_APP_SERVICE_ID ?? 'default_service_id',
-            //     //     process.env.REACT_APP_TEMPLATE_ID ?? 'default_template_id',
-            //     //     templateParams,
-            //     //     process.env.REACT_APP_PUBLIC_KEY ?? 'default_public_key'
-            //     // );
+                const templateParams = {
+                    largeMementos,
+                    smallMementos,
+                    hardwareTypes,
+                    colors,
+                    total,
+                    message,
+                    name,
+                    email
+                }
+                await emailjs.send(
+                    process.env.REACT_APP_SERVICE_ID ?? 'default_service_id',
+                    process.env.REACT_APP_TEMPLATE_ID ?? 'default_template_id',
+                    templateParams,
+                    process.env.REACT_APP_PUBLIC_KEY ?? 'default_public_key'
+                )
                 toastifySuccess()
         } catch (e) {
             console.error(e)
