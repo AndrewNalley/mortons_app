@@ -256,7 +256,7 @@ const SubmitForm = () => {
                             rows={3}
                             // name='message'
                             {...register('message', {
-                                required: false
+                                required: true
                             })}
                             className='form-control formInput'
                             placeholder='Please enter any special requests or comments here'
@@ -270,7 +270,7 @@ const SubmitForm = () => {
                         type='text'
                         // name='name'
                         {...register('name', {
-                            required: { value: false, message: 'Please enter your name' },
+                            required: { value: true, message: 'Please enter your name' },
                             maxLength: {
                                 value: 30,
                                 message: 'Please use 30 characters or less'
@@ -287,7 +287,7 @@ const SubmitForm = () => {
                         type='email'
                         // name='email'
                         {...register('email', {
-                            required: false,
+                            required: true,
                             pattern: /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
                         })}
                         className='form-control formInput'
