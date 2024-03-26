@@ -5,6 +5,16 @@ import 'react-toastify/dist/ReactToastify.min.css'
 
 const Contact = () => {
 
+    const sanitizeInput = (input: string) => {
+        // Escape HTML entities to prevent XSS attacks
+        const sanitizedInput = input.replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    
+        // Additional sanitization steps can be added
+        // For example, removing specific characters or patterns 
+
+        return sanitizedInput;
+    };
+
     const {
         register,
         handleSubmit,
@@ -31,10 +41,10 @@ const Contact = () => {
 
         try {
             const templateParams = {
-                name,
-                email,
-                subject,
-                message
+                name: sanitizeInput(name),
+                email: sanitizeInput(email),
+                subject: sanitizeInput(subject),
+                message: sanitizeInput(message)
             };
             await emailjs.send(
                 process.env.REACT_APP_SERVICE_ID ?? 'default_service_id',

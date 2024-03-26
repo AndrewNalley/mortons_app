@@ -7,6 +7,16 @@ import 'react-toastify/dist/ReactToastify.min.css'
 
 const SubmitForm = () => {
 
+    const sanitizeInput = (input: string) => {
+        // Escape HTML entities to prevent XSS attacks
+        const sanitizedInput = input.replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    
+        // Additional sanitization steps can be added
+        // For example, removing specific characters or patterns
+    
+        return sanitizedInput;
+    };
+
     const {
         register,
         handleSubmit,
@@ -110,9 +120,9 @@ const SubmitForm = () => {
                 hardwareTypes,
                 colors,
                 total,
-                message,
-                name,
-                email
+                name: sanitizeInput(name),
+                email: sanitizeInput(email),
+                message: sanitizeInput(message)
             }
             await emailjs.send(
                 process.env.REACT_APP_SERVICE_ID ?? 'default_service_id',
