@@ -61,6 +61,13 @@
   color: #000;
 }
 
+.link-btn {
+  display: flex;
+  justify-content: center;
+  background-color: #20495d;
+  color: white;
+}
+
 .link:hover {
   color: #333;
 }

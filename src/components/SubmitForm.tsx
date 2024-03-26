@@ -243,12 +243,6 @@ const SubmitForm = () => {
                             </TableRow>
                         ))}
                     </TableBody>
-                    <TableFooter>
-                        <TableRow>
-                            <TableHeaderCell>Items selected:</TableHeaderCell>
-                            <TableHeaderCell>Total Price: $</TableHeaderCell>
-                        </TableRow>
-                    </TableFooter>
                 </Table>
                 <div className='row formRow'>
                     <div className='col'>
