@@ -96,7 +96,7 @@ const SubmitForm = () => {
                 return formatter.format(grandTotal)
             }
 
-            const largeMementos = largeItemChoices() 
+            const largeMementos = largeItemChoices()
             const smallMementos = smallItemChoices()
             const hardwareTypes = hardwareChoices()
             const colors = colorChoices()
@@ -104,23 +104,23 @@ const SubmitForm = () => {
             const total = printGrandTotal(grandTotal)
 
 
-                const templateParams = {
-                    largeMementos,
-                    smallMementos,
-                    hardwareTypes,
-                    colors,
-                    total,
-                    message,
-                    name,
-                    email
-                }
-                await emailjs.send(
-                    process.env.REACT_APP_SERVICE_ID ?? 'default_service_id',
-                    process.env.REACT_APP_TEMPLATE_ID ?? 'default_template_id',
-                    templateParams,
-                    process.env.REACT_APP_PUBLIC_KEY ?? 'default_public_key'
-                )
-                toastifySuccess()
+            const templateParams = {
+                largeMementos,
+                smallMementos,
+                hardwareTypes,
+                colors,
+                total,
+                message,
+                name,
+                email
+            }
+            await emailjs.send(
+                process.env.REACT_APP_SERVICE_ID ?? 'default_service_id',
+                process.env.REACT_APP_TEMPLATE_ID ?? 'default_template_id',
+                templateParams,
+                process.env.REACT_APP_PUBLIC_KEY ?? 'default_public_key'
+            )
+            toastifySuccess()
         } catch (e) {
             console.error(e)
         }
