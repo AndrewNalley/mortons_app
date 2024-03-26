@@ -1,5 +1,5 @@
 import { useForm } from 'react-hook-form'
-import { Table, TableHeader, TableBody, TableCell, TableFooter, TableHeaderCell, TableRow } from 'semantic-ui-react'
+import { Table, TableHeader, TableBody, TableCell, TableHeaderCell, TableRow } from 'semantic-ui-react'
 import { colorChoicesArray, hardwareChoicesArray, largeItemsArray, smallItemsArray } from '../assets/storeItems/Items'
 import emailjs from 'emailjs-com'
 import { ToastContainer, toast } from 'react-toastify'
@@ -243,12 +243,6 @@ const SubmitForm = () => {
                             </TableRow>
                         ))}
                     </TableBody>
-                    <TableFooter>
-                        <TableRow>
-                            <TableHeaderCell>Items selected:</TableHeaderCell>
-                            <TableHeaderCell>Total Price: $</TableHeaderCell>
-                        </TableRow>
-                    </TableFooter>
                 </Table>
                 <div className='row formRow'>
                     <div className='col'>
