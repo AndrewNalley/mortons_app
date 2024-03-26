@@ -1,7 +1,5 @@
 import { NavLink } from 'react-router-dom'
 import weddingBundle1 from '../assets/photos/proj-photos/Craft_Lindsey-34.jpg'
-import weddingBundle2 from '../assets/photos/proj-photos/Craft_Lindsey-35.jpg'
-import weddingBundle3 from '../assets/photos/proj-photos/Craft_Lindsey-39.jpg'
 
 export default function Package() {
 
