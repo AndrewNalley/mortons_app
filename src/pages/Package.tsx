@@ -7,7 +7,7 @@ export default function Package() {
         <section className='page container'>
             <h1 className='page-header page-header-text'>Custom Wedding Bundle</h1>
             <div>
-                    <NavLink className='link-btn' to='form'>Choose your bundle!</NavLink>
+                <NavLink className='link-btn' to='form'>Choose your bundle!</NavLink>
             </div>
             <img src={weddingBundle1} className='bold-photo' alt='wedding bundle tray' width={1920} />
             <h3 className='page-header'>We offer a special bundle for your Special Day!</h3>
@@ -18,7 +18,7 @@ export default function Package() {
                 </p>
             </div>
             <div>
-                    <NavLink className='link-btn' to='form'>Choose your bundle!</NavLink>
+                <NavLink className='link-btn submit-btn near-footer' to='form'>Choose your bundle!</NavLink>
             </div>
 
         </section>
