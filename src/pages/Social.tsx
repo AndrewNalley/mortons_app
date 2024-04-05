@@ -7,7 +7,7 @@ export default function Woof() {
         <section className='page container'>
             <h2 className='page-header'>WOOF!</h2>
             <NavLink to='/gallery'>
-                <h6 className='link-btn' >Check out my mementos!</h6>
+                <h5 className='link-btn' >Check out my mementos!</h5>
             </NavLink>
             <section>
                 <img src={babyMarty} alt='Marty the dog' />

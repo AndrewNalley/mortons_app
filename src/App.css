@@ -64,8 +64,12 @@
 .link-btn {
   display: flex;
   justify-content: center;
+  text-align: center;
+  margin-inline: auto;
   background-color: #20495d;
   color: white;
+  border-radius: 25px;
+  width: 60%;
 }
 
 .link:hover {
@@ -101,12 +105,12 @@
 .footer-container {
   display: grid;
   justify-content: center;
-
+  margin-top: -50px;
 }
 
 .footer-logo {
   overflow: hidden;
-  margin-top: -100px;
+  margin-top: -200px;
   margin-bottom: -80px;
   height: auto;
   clip-path: inset(30% 0 30% 0);

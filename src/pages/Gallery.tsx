@@ -19,7 +19,10 @@ export default function Gallery() {
       <MiscSwiper />
 
       <NavLink to='full'>
-        <h4 className='link-btn' >See the Full Gallery </h4>
+        <h5 className='link-btn' >See the Full Gallery </h5>
+      </NavLink>
+      <NavLink to='/contact'>
+        <h5 className='link-btn' >Something catch your eye?</h5>
       </NavLink>
     </section>
   );

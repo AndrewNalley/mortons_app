@@ -32,7 +32,10 @@ export default function FullGallery() {
         />
       </div>
       <NavLink to='/'>
-        <h4 className='link-btn' >Back to the Homepage</h4>
+        <h5 className='link-btn' >Back to the Homepage</h5>
+      </NavLink>
+      <NavLink to='/contact'>
+        <h5 className='link-btn' >Something catch your eye?</h5>
       </NavLink>
 
     </section>
