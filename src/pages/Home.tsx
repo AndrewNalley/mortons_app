@@ -1,15 +1,23 @@
-import bigSpringPhoto from '../assets/photos/owner-photos/BigSpring.jpeg'
+import { NavLink } from 'react-router-dom'
+import tray from '../assets/photos/proj-photos/Craft_Lindsey-34.jpg'
 
 export default function Home() {
     return (
         <section className='page container'>
             <h1 className="page-header page-header-text">Welcome to Morton's Mementos</h1>
             <div>
-                <img src={bigSpringPhoto} className='bold-photo' alt='by the pond' />
+                <NavLink to='/gallery'>
+                    <h4 className='link-btn' >Resin Coasters, Trays, Candles, Extracts, and more! </h4>
+                </NavLink>
             </div>
+
             <div>
-                <p>We're happy to see you!</p>
+                <img src={tray} className='bold-photo' alt='by the pond' />
             </div>
+            <br />
+            <NavLink to='/about'>
+                <h5 className='link-btn' >Learn more about our store</h5>
+            </NavLink>
         </section>
     );
 }

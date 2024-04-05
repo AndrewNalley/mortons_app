@@ -4,16 +4,16 @@ import { colorChoicesArray, hardwareChoicesArray, largeItemsArray, smallItemsArr
 import emailjs from 'emailjs-com'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.min.css'
+import { NavLink } from 'react-router-dom'
 
 const SubmitForm = () => {
 
     const sanitizeInput = (input: string) => {
         // Escape HTML entities to prevent XSS attacks
         const sanitizedInput = input.replace(/</g, '&lt;').replace(/>/g, '&gt;');
-    
-        // Additional sanitization steps can be added
-        // For example, removing specific characters or patterns
-    
+
+        // Additional sanitization steps if needed
+
         return sanitizedInput;
     };
 
@@ -141,6 +141,9 @@ const SubmitForm = () => {
         <section className='page container'>
             <h1 className="page-header page-header-text">Bundle Form</h1>
             <h4 className='page-header'>Let's make your special moments last forever</h4>
+            <NavLink to='/package'>
+                <p className='link-btn' >Go back to package information</p>
+            </NavLink>
             <form id='contact-form' onSubmit={handleSubmit(onSubmit)} noValidate>
                 <Table padded>
                     <TableHeader>
@@ -162,7 +165,9 @@ const SubmitForm = () => {
                                     <input
                                         type='number'
                                         min={0}
-                                        {...register(`largeItems[${item.id}].quantity`)}
+                                        {...register(`largeItems[${item.id}].quantity`, {
+                                            pattern: /^[^<>]*$/
+                                        })}
                                         onChange={(e) => {
                                             const quantity = parseInt(e.target.value)
                                             setValue(`largeItems[${item.id}].quantity`, quantity)
@@ -195,7 +200,9 @@ const SubmitForm = () => {
                                     <input
                                         type='number'
                                         min={0}
-                                        {...register(`smallItems[${item.id}].quantity`)}
+                                        {...register(`smallItems[${item.id}].quantity`, {
+                                            pattern: /^[^<>]*$/
+                                        })}
                                         onChange={(e) => {
                                             const quantity = parseInt(e.target.value)
                                             setValue(`smallItems[${item.id}].quantity`, quantity)
@@ -260,7 +267,8 @@ const SubmitForm = () => {
                             rows={3}
                             // name='message'
                             {...register('message', {
-                                required: true
+                                required: true,
+                                pattern: /^[^<>]*$/
                             })}
                             className='form-control formInput'
                             placeholder='Please enter any special requests or comments here'
@@ -275,6 +283,7 @@ const SubmitForm = () => {
                         // name='name'
                         {...register('name', {
                             required: { value: true, message: 'Please enter your name' },
+                            pattern: /^[^<>]*$/,
                             maxLength: {
                                 value: 30,
                                 message: 'Please use 30 characters or less'

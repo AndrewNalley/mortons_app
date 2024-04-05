@@ -7,6 +7,7 @@ import Lightbox from 'yet-another-react-lightbox'
 import 'yet-another-react-lightbox/styles.css'
 import Captions from 'yet-another-react-lightbox/plugins/captions'
 import 'yet-another-react-lightbox/plugins/captions.css'
+import { NavLink } from 'react-router-dom'
 
 
 export default function FullGallery() {
@@ -30,6 +31,9 @@ export default function FullGallery() {
           aria-busy="true"
         />
       </div>
+      <NavLink to='/'>
+        <h4 className='link-btn' >Back to the Homepage</h4>
+      </NavLink>
 
     </section>
   );

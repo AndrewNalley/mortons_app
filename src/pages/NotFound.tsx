@@ -5,7 +5,7 @@ export default function NotFound() {
     <section className='page'>
       <h1 className="page-header page-header-text">Page not found :( </h1>
 
-      <p>Go to the <NavLink to=''>Homepage</NavLink>.</p>
+      <p>Go to the <NavLink to='/'>Homepage</NavLink>.</p>
     </section>
   )
 }

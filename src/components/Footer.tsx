@@ -3,7 +3,7 @@ import div1 from '../assets/SVGs/Other/div1.svg'
 
 
 export default function Footer() {
-    const currentYear = new Date().getFullYear();
+    const currentYear = new Date().getFullYear()
     return (
         <>
             <div className='footer-container'>

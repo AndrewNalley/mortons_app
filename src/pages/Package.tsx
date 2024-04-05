@@ -18,7 +18,7 @@ export default function Package() {
                 </p>
             </div>
             <div>
-                <NavLink className='link-btn submit-btn near-footer' to='form'>Choose your bundle!</NavLink>
+                <NavLink className='link-btn submit-btn' to='/'>Back to Home</NavLink>
             </div>
 
         </section>

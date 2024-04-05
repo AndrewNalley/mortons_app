@@ -135,7 +135,7 @@ const Contact = () => {
                         {errors.message && <span className='errorMessage'>Please enter a message</span>}
                     </div>
                 </div>
-                <button className='submit-btn near-footer' type='submit'>
+                <button className='submit-btn' type='submit'>
                     Submit
                 </button>
             </form>
