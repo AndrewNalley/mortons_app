@@ -18,10 +18,9 @@ export default function Gallery() {
       <CoasterSwiper />
       <MiscSwiper />
 
-
-      <button className='page-header near-footer'>
-        <NavLink to='full' className={'button-text'}>See the Full Gallery</NavLink>
-      </button>
+      <NavLink to='full'>
+        <h4 className='link-btn' >See the Full Gallery </h4>
+      </NavLink>
     </section>
   );
 }

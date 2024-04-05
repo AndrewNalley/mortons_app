@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router-dom'
 import ownerPhoto from '../assets/photos/owner-photos/winter.jpeg'
 import mementoPhoto from '../assets/photos/proj-photos/Craft_Lindsey-19.jpg'
 import div1 from '../assets/SVGs/Other/div1.svg'
@@ -6,16 +7,11 @@ export default function About() {
   return (
     <section className='page container'>
       <h1 className='page-header page-header-text'>About</h1>
-      <div className='grid'>
-        <h4>Wedding Flower Preservation </h4>
-        <h4>Resin Coasters and Decorative Serving Trays </h4>
-        <h4>Candles, Extracts, and more!</h4>
-      </div>
       <div className='article grid about'>
         <img src={ownerPhoto} className='bold-photo photo-center' alt='beach' width={300} />
         <div>
-        <br />
-        <h3>Hello!</h3>
+          
+          <h3 className= 'page-header'>We're happy to see you!!</h3>
           <p>Anyone who knows me could tell you the most important thing to me is my baby boy Morton. 🐶🩵 </p>
           <p>He is a Samoyed, almost 2 years old and the bestest boy. The second thing someone who knows me will tell you, is that I love gift giving and saving memories of a special moment. From those loves, this shop was born… </p>
           <p>We started about a year ago, preserving a close friends wedding bouquet, and loved it so much!</p>
@@ -37,6 +33,13 @@ export default function About() {
         </div>
         <img src={mementoPhoto} className='bold-photo' alt='beach' width={600} />
       </div>
+      <br />
+      <NavLink to='/gallery'>
+        <h4 className='link-btn' >Check out the gallery!</h4>
+      </NavLink>
+      <NavLink to='/package'>
+        <h4 className='link-btn' >Wedding Packages</h4>
+      </NavLink>
     </section>
   )
 }
