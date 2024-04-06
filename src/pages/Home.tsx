@@ -11,7 +11,7 @@ export default function Home() {
             <h1 className="page-header page-header-text">Welcome to Morton's Mementos</h1>
             <div>
                 <NavLink to='/gallery'>
-                    <h5 className='link-btn'>Coasters, Trays, Candles, Extracts, and more! </h5>
+                    <button className='link-btn'>View the Gallery </button>
                 </NavLink>
             </div>
 
@@ -34,7 +34,7 @@ export default function Home() {
             </div>
             <br />
             <NavLink to='/about'>
-                <h5 className='link-btn' >Learn more about our store</h5>
+                <button className='link-btn' >About our store</button>
             </NavLink>
         </section>
     );
