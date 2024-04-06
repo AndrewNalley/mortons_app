@@ -35,10 +35,10 @@ export default function About() {
       </div>
       <br />
       <NavLink to='/gallery'>
-        <h5 className='link-btn' >Gallery</h5>
+        <button className='link-btn' >Gallery</button>
       </NavLink>
       <NavLink to='/package'>
-        <h5 className='link-btn' >Wedding Packages</h5>
+        <button className='link-btn' >Wedding Packages</button>
       </NavLink>
     </section>
   )
