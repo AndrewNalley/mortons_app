@@ -242,7 +242,7 @@ const SubmitForm = () => {
 
                     <TableHeader>
                     <TableRow>
-                            <TableHeaderCell>Color Choices</TableHeaderCell>
+                            <TableHeaderCell>COLOR CHOICES</TableHeaderCell>
                         </TableRow>
                         <TableRow>
                             <TableHeaderCell>Items</TableHeaderCell>
