@@ -115,3 +115,5 @@
 // const photo109 = { id: 109, title: '109', src: photo109, width: 1920, height: 1080 }
 // const photo110 = { id: 110, title: '110', src: photo110, width: 1920, height: 1080 }
 // const photo111 = { id: 111, title: '111', src: photo111, width: 1920, height: 1080 }
+
+export {}
