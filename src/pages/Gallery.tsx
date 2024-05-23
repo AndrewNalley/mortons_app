@@ -12,6 +12,7 @@ export default function Gallery() {
   return (
     <section className='page'>
       <h1 className='page-header page-header-text'>Mementos Gallery</h1>
+      <h2 className='page-header'>More Mementos coming soon!</h2>
 
       <PopularSwiper />
       <TraySwiper />

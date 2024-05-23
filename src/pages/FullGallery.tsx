@@ -17,6 +17,7 @@ export default function FullGallery() {
     <section className='page'>
 
       <h1 className='page-header page-header-text'>Full Gallery</h1>
+      <h2 className='page-header'>More Mementos coming soon!</h2>
       <div className='near-footer'>
         <PhotoAlbum
           layout="columns"
