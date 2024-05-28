@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react'
 import { Product } from '../types'
-import { photosArray } from '../assets/PhotoDump'
 import supabaseProducts from '../assets/supabaseProducts'
 import PhotoAlbum from 'react-photo-album'
 import Lightbox from 'yet-another-react-lightbox'
