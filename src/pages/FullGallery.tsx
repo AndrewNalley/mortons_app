@@ -1,7 +1,6 @@
-import { useState } from 'react'
-
-import { photosArray } from '../assets/PhotoDump'
-
+import { useEffect, useState } from 'react'
+import { Product } from '../types'
+import supabaseProducts from '../assets/supabaseProducts'
 import PhotoAlbum from 'react-photo-album'
 import Lightbox from 'yet-another-react-lightbox'
 import 'yet-another-react-lightbox/styles.css'
@@ -12,6 +11,29 @@ import { NavLink } from 'react-router-dom'
 
 export default function FullGallery() {
   const [index, setIndex] = useState(-1)
+  const [products, setProducts] = useState<Product[]>([])
+  const [loading, setLoading] = useState<boolean>(true);
+  const [error, setError] = useState<string | null>(null);
+
+
+useEffect(() => {
+  const fetchProducts = async () => {
+      try {
+          const productsArray = await supabaseProducts();
+          setProducts(productsArray);
+      } catch (err) {
+          setError('Failed to fetch products.');
+      } finally {
+          setLoading(false);
+      }
+  };
+
+  fetchProducts();
+}, []);
+
+if (loading) return <div>Loading...</div>;
+if (error) return <div>Error: {error}</div>;
+
 
   return (
     <section className='page'>
@@ -21,11 +43,11 @@ export default function FullGallery() {
       <div className='near-footer'>
         <PhotoAlbum
           layout="columns"
-          photos={photosArray}
+          photos={products.map((photo, idx) => ({ src: photo.src, width: 192, height: 108, key: `${photo.src}-${idx}` }))}
           onClick={({ index: current }) => setIndex(current)} />
         <Lightbox
           index={index}
-          slides={photosArray}
+          slides={products}
           open={index >= 0}
           close={() => setIndex(-1)}
           plugins={[Captions]}

@@ -110,8 +110,6 @@ import photo107 from '../assets/photos/proj-photos/DSC_0827.jpg'
 import photo108 from '../assets/photos/proj-photos/DSC_0828.jpg'
 
 
-
-
 const popularArray = [
   { id: 5, title: 'Coaster holder - with flowers and gold foil', src: photo5, width: 1920, height: 1080 },
   { id: 7, title: 'Jewelry Medium Tray - with flowers and silver foil', src: photo7, width: 1920, height: 1080 },
@@ -130,7 +128,7 @@ const popularArray = [
 ]
 
 const trayArray = [
-  
+
   { id: 7, title: 'Jewelry Medium Tray - with flowers and silver foil', src: photo7, width: 1920, height: 1080 },
   { id: 8, title: 'Jewelry Medium Tray - with flowers and silver foil', src: photo8, width: 1920, height: 1080 },
   { id: 9, title: 'Jewelry Medium Tray - with flowers and silver foil', src: photo9, width: 1920, height: 1080 },
@@ -321,9 +319,14 @@ const photosArray = [
 
 ]
 
+const fullGalleryArray = [
+  'yes',
+  'no'
+]
+
 
 export const images: string[] = miscArray.map(item => item.src);
 
 const imageByIndex = (index: number): string => images[index % images.length];
 
-export { photosArray, miscArray, trayArray, coasterArray, popularArray, imageByIndex }
+export { photosArray, miscArray, trayArray, coasterArray, popularArray, fullGalleryArray, imageByIndex }
