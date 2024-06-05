@@ -2,7 +2,7 @@
 
 ## Description
 
-- One stop shop for all things Morton's Mementos. Simple eCommerce site with homepage, about section, photos of past products, and a contact form for customers to describe the type of service or product in which they are interested. 
+- One stop shop for all things Morton's Mementos. Full-stack eCommerce site with homepage, about section, photos of past products, and a contact form for customers to describe the type of service or product in which they are interested. Additional services are offered for weddings and are more fully described on the package page. 
 
 
 ## Table of Contents
@@ -63,9 +63,11 @@ SOFTWARE.
 
 ## Features
 
-SPA 
-Front-end only contact form
+React SPA 
+Front-end only contact form using EmailJS
 React BrowserRouter
+Photos fetched from cloudinary cloud storage: https://cloudinary.com
+Merchandise information now stored in supabase PostgreSQL database: https://supabase.com
 
 
 ## Tests
